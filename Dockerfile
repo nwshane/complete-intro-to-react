@@ -8,10 +8,10 @@ RUN apt-get update && \
     apt-get install -y nodejs npm
 
 RUN npm install && \
-    npm install -g mocha nodemon webpack standard
+    npm install -g http-server mocha nodemon webpack standard
 
-# some packages reference node as "node". This simlink fixes the
-# naming issue for those packages. (Example: http-server)
+# some packages reference node as "node". This simlink fixes 
+# the naming issue for those packages. (Example: http-server)
 # https://github.com/nodejs/node-v0.x-archive/issues/3911
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 

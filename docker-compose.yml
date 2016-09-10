@@ -2,7 +2,9 @@ version: '2'
 services:
   web:
     build: .
+    image: completeintrotoreact_web
     volumes:
       - .:/myapp
-    command: bash
-    
+    command: /bin/sh -c 'http-server .'
+    ports:
+      - "8080:8080"
