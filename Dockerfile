@@ -7,6 +7,8 @@ WORKDIR $APPHOME
 RUN apt-get update && \
     apt-get install -y nodejs npm
 
+COPY package.json $APPHOME/
+
 RUN npm install && \
     npm install -g http-server mocha nodemon webpack standard
 

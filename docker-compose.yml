@@ -5,6 +5,7 @@ services:
     image: completeintrotoreact_web
     volumes:
       - .:/myapp
+      - /myapp/node_modules
     command: /bin/sh -c 'http-server .'
     ports:
       - "8080:8080"
