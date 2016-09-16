@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A two day workshop on a complete intro to React",
   "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
   "author": "Brian Holt <btholt@gmail.com>",
   "license": "MIT",
   "dependencies": {
@@ -13,7 +16,8 @@
     "react-dom": "^0.14.7",
     "react-redux": "^4.4.0",
     "react-router": "^2.0.0",
-    "redux": "^3.3.1"
+    "redux": "^3.3.1",
+    "standard": "^8.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.5.2",
