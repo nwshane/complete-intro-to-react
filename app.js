@@ -23,7 +23,7 @@ const Store = require('./js/Store.jsx')
 const store = Store.store
 
 // Provides templating language used in index.html
-const _ = require('lodash')
+const _template = require('lodash.template')
 
 // Node package, stands for file system. Will be used to read index.html
 // into memory
@@ -39,7 +39,7 @@ const Routes = ClientApp.Routes
 const baseTemplate = fs.readFileSync('./index.html')
 
 // Create a template function that returns a string based on index.html
-const template = _.template(baseTemplate)
+const template = _template(baseTemplate)
 
 const app = express()
 
@@ -47,7 +47,7 @@ app.use('/public', express.static('./public'))
 
 app.use((req, res) => {
   match(
-    { routes: Routes(), location: req.url },
+    { routes: Routes, location: req.url },
     (error, redirectLocation, renderProps) => {
       if (error) {
         res.status(500).send(error.message)
